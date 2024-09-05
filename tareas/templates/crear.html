@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'bootstrap.min.css' %}">
+    <script src="{% static 'bootstrap.bundle.min.js' %}"></script>
+    <link rel='stylesheet' href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class='bg-light mx-auto w-50 my-5 p-5 tareas'>
+    <a href="{% url 'listar' %}"><button class="btn btn-danger mb-5">Volver</button></a>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class='btn btn-success' type="submit" >Enviar</button>
+    </form>
+</div>
+
+    
+</body>
+</html>

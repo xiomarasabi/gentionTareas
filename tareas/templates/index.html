@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'bootstrap.min.css' %}">
+    <link rel='stylesheet' href="{% static 'styles.css' %}">
+    <script src="{% static 'bootstrap.bundle.min.js' %}"></script>
+</head>
+<body>
+    <a href="{% url 'crear'%}"><button class='btn btn-success mx-5 mt-5' >Crear Nuevo</button></a>
+    {% for tarea in tareas %}
+    <div class='my-5 bg-light w-25 mx-5 p-5 tareas'>    
+        <h1>{{tarea.titulo}}</h1>
+        <p>{{tarea.descripcion}}</p>
+        {{tarea.estado}}
+    </div>
+    {% endfor %}
+
+</body>
+</html>
